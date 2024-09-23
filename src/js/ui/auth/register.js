@@ -24,12 +24,14 @@ console.log(userData)
       const response = await fetch (API_AUTH_REGISTER, sendUserData)
       const json = await response.json();
       console.log(json)
+  
       return json;
     } catch (error) {
       alert('Registration failed')
       console.error('Registration failed:', error);
-    }
-   
+  
+    } finally {    window.location.href = '/auth/login/';}
+  
     }
   
 

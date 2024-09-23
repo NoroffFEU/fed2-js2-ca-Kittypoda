@@ -22,15 +22,19 @@ export async function onLogin(event) {
 
       const response = await fetch (API_AUTH_LOGIN, sendUserData)
       const json = await response.json();
-      console.log(json)
+      const accessToken = json.data.accessToken;
+      
+
+    localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('userName',JSON.stringify(json.data.name))
+
       return json;
     } catch (error) {
       alert('Login failed')
       console.error('Login failed:', error);
-    }
+    } finally {    window.location.href = '/';}
 
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('userName',JSON.stringify(json.data.name))
+    
   }
 
 
