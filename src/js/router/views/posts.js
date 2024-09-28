@@ -8,14 +8,29 @@ export function generatePost(post){
   const postContainer = document.createElement('div');
   postContainer.classList.add('post-container');
 
-  const heading = document.createElement('h2');
+  const postPageLink = document.createElement('a');
+  postPageLink.href = '#';  
+  postPageLink.textContent = 'Read more';  
+
+  
+  postPageLink.addEventListener('click', (event) => {
+    event.preventDefault();  
+    const postId = post.id;
+    const newLink = `/post/?postId=${postId}`;
+    window.location.assign(newLink);  
+  });
+
+  const heading = document.createElement('h1');
   heading.textContent = post.title;
 
+  
   postContainer.appendChild(heading);
+  postContainer.appendChild(postPageLink);
   postWrapper.appendChild(postContainer);
 
   return postWrapper;
 }
+
 
 function displayPosts(posts) {
   const displayPostsContainer = document.getElementById('display-posts');
