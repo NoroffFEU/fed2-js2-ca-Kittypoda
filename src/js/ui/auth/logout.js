@@ -1,1 +1,6 @@
-export function onLogout() {}
+
+function onLogout() {
+
+}
+
+
