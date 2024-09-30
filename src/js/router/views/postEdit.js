@@ -4,69 +4,12 @@ import { API_KEY, API_SOCIAL_POSTS } from "../../api/constants";
 authGuard();
 
 
-export function onUpdatePost() {
 
-  
-  
-  document.addEventListener('DOMContentLoaded', () => {
     const editPostForm = document.getElementById('edit-post-form');
-
-    if (!editPostForm) {
-      console.error('Form element with id "edit-post-form" not found.');
-      return;
-
-    }
-    
-    const parameterString = window.location.search;
-    const searchParams = new URLSearchParams(parameterString);
-    const postId = searchParams.get('postId');
-
-    if (!postId) {
-      console.error('post ID not found in URL parameters.');
-      return;
-    }
-
-    async function fetchPostData(postId) {
-      try {
-        const response = await fetch(`${API_SOCIAL_POSTS}/${postId}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-            "X-Noroff-API-Key": API_KEY
-          },
-        });
-
-        if (response.ok) {
-          const responseData = await response.json();
-          return responseData.data;  
-        } else {
-          console.error('Failed to fetch post data:', response.statusText);
-          return null;
-        }
-      } catch (error) {
-        console.error('Error fetching post data:', error);
-        return null;
-      }
-    }
-
-    
-    async function populateForm() {
-      const postData = await fetchPostData(postId);
-      if (postData) {
-        document.getElementById('title').value = postData.title;
-        document.getElementById('body').value = postData.body;
-      } else {
-        console.error('Failed to load post data for form population.');
-      }
-    }
+    editPostForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
   
-    populateForm();
-
-    
-    editPostForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
 
       const title = document.getElementById('title').value;
       const body = document.getElementById('body').value;
@@ -87,7 +30,10 @@ export function onUpdatePost() {
           "X-Noroff-API-Key": API_KEY
         },
       };
-
+      const parameterString = window.location.search;
+      const searchParams = new URLSearchParams(parameterString);
+      const postId = searchParams.get('postId');
+      console.log(postId)
       try {
         const response = await fetch(`${API_SOCIAL_POSTS}/${postId}`, postData);
         const json = await response.json();
@@ -104,5 +50,4 @@ export function onUpdatePost() {
         alert('Error updating the post. Please try again.');
       }
     });
-  });
-}
+

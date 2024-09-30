@@ -25,12 +25,12 @@ export function generatePost(post){
   const heading = document.createElement('h1');
   heading.textContent = post.title;
 
-  // Create and append edit button
+  
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
-  editButton.href = `/post/edit/?postId=${post.id}`;  // Redirect to edit page with postId
+  editButton.href = `/post/edit/?postId=${post.id}`; 
 
-  // Create and append delete button
+  
   const deleteButton = document.createElement('a');
   deleteButton.textContent = 'Delete';
   deleteButton.addEventListener('click', async (event) => {
