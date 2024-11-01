@@ -10,7 +10,7 @@ export default async function router(pathname = window.location.pathname) {
     case "/fed2-js2-ca-Kittypoda/auth/":
       await import("./views/auth.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/auth/login/":
+    case "/auth/login/":
       await import("./views/login.js");
       break;
     case "/fed2-js2-ca-Kittypoda/auth/register/":
