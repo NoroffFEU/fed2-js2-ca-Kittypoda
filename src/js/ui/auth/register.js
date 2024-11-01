@@ -30,7 +30,7 @@ console.log(userData)
       alert('Registration failed')
       console.error('Registration failed:', error);
   
-    } finally {    window.location.href = '/auth/login/';}
+    } finally {    window.location.href = '../login/';}
   
     }
   
