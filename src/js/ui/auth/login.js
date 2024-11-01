@@ -32,7 +32,7 @@ export async function onLogin(event) {
     } catch (error) {
       alert('Login failed')
       console.error('Login failed:', error);
-    } finally {    window.location.href = '/';}
+    } finally {    window.location.href = '/fed2-js2-ca-Kittypoda/';}
 
 
   }
