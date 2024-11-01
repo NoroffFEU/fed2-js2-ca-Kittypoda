@@ -18,7 +18,7 @@ export function generatePost(post){
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();  
     const postId = post.id;
-    const newLink = `/post/?postId=${postId}`;
+    const newLink = `/fed2-js2-ca-Kittypoda/post/?postId=${postId}`;
     window.location.assign(newLink);  
   });
 
@@ -28,7 +28,7 @@ export function generatePost(post){
   
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
-  editButton.href = `/post/edit/?postId=${post.id}`; 
+  editButton.href = `/fed2-js2-ca-Kittypoda/post/edit/?postId=${post.id}`; 
 
   
   const deleteButton = document.createElement('a');
