@@ -3,32 +3,32 @@
 // You may change the behaviour or approach of this file if you choose
 export default async function router(pathname = window.location.pathname) {
   switch (pathname) {
-    case "/fed2-js2-ca-Kittypoda/":
+    case "/":
       await import("./views/home.js");
       await import("./views/posts.js")
       break;
-    case "/fed2-js2-ca-Kittypoda/auth/":
+    case "/auth/":
       await import("./views/auth.js");
       break;
     case "/auth/login/":
       await import("./views/login.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/auth/register/":
+    case "/auth/register/":
       await import("./views/register.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/post/":
+    case "/post/":
       await import("./views/post.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/post/edit/":
+    case "/post/edit/":
       await import("./views/postEdit.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/post/create/":
+    case "/post/create/":
       await import("./views/postCreate.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/profile/":
+    case "/profile/":
       await import("./views/profile.js");
       break;
-    case "/fed2-js2-ca-Kittypoda/":
+    case "/":
       await import("./views/posts.js");
       break;
       default:
