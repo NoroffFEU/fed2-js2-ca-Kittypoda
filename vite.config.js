@@ -3,9 +3,10 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   appType: "mpa",
-  base: "",
+  base: "/fed2-js2-ca-Kittypoda/",
   build: {
     target: "esnext",
+    outDir: "./dist",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "./index.html"),
