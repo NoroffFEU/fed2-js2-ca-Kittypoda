@@ -9,16 +9,37 @@
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
-
-  <h1>Home</h1>
-
-  <a href="./profile/">My Profile</a>
-  <a href="./auth/login/">Login</a>
-  <a href="./auth/register/">Register</a>
-  <a href="./post/create/">Create post</a>
-  <button id="logout-button" class="bg-gray-900 text-white font-bold py-2 px-4 rounded">Logout</button>
+<body class="bg-customBeige m-4">
+  <header class="flex items-center justify-between p-4">
+    <img src="/public/images/Say.png" alt="Noroff Logo" class="h-10">
+    <button id="logout-button" class="btn-secondary">Logout</button>
+  </header>
+</body>
+<a href="./profile/" class="font-noto font-bold text-customDark">Oda Rolstad</a>
+<section class="flex flex-col items-center w-full px-4">
+  <form name="createPost" class="flex flex-col w-full max-w-lg">
+    <div class="flex flex-col w-full">
+      <input 
+        class="w-full bg-customLBeige text-sm text-black font-open py-2 px-4 mb-4 rounded-md shadow-xl" 
+        id="title" 
+        name="title" 
+        type="text" 
+        placeholder="Title" 
+        required
+      >
+      <textarea 
+        class="w-full resize-none bg-customLBeige text-sm text-black font-open py-2 px-4 mb-4 rounded-lg shadow-xl" 
+        name="text" 
+        id="text" 
+        cols="30" 
+        rows="10" 
+        placeholder="Say something.." 
+        required
+      ></textarea>
+    </div>
+    <button class="btn-primary self-end">Say it!</button>   
+  </form>
+</section>
   <section class="blog-grid">
     <div id="display-posts"></div>
   </section>

@@ -11,10 +11,8 @@ export function generatePost(post){
   postContainer.classList.add('post-container');
 
   const postPageLink = document.createElement('a');
-  postPageLink.href = '#';  
-  postPageLink.textContent = 'Read more';  
+  postPageLink.href = '#';   
 
-  
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();  
     const postId = post.id;
@@ -22,13 +20,20 @@ export function generatePost(post){
     window.location.assign(newLink);  
   });
 
-  const heading = document.createElement('h1');
-  heading.textContent = post.title;
+  // Use the actual post author's name or default to "Anonymous"
+  const authorName = post.author ? post.author.name : 'Oda';
+
+  // Create a user text element with "authorName says"
+  const userText = document.createElement('h2');
+  userText.textContent = `${authorName} says..`;
+
+  const heading = document.createElement('p');
+  heading.textContent = post.body;
 
   
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
-  editButton.href = `/fed2-js2-ca-Kittypoda/post/edit/?postId=${post.id}`; 
+  editButton.href = `/fed2-js2-ca-Kittypoda//post/edit/?postId=${post.id}`; 
 
   
   const deleteButton = document.createElement('a');
@@ -42,7 +47,7 @@ export function generatePost(post){
     }
   });
 
-  
+  postContainer.appendChild(userText)
   postContainer.appendChild(heading);
   postContainer.appendChild(postPageLink);
   postContainer.appendChild(editButton);

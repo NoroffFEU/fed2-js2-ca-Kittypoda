@@ -1,4 +1,28 @@
+/* input.css */
 @import url(_reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-3xl font-noto font-bold text-customDark;
+}
+
+h2 {
+  @apply text-base font-noto font-bold text-customDark;
+}
+
+p {
+  @apply text-sm font-open text-black;
+}
+
+.btn-primary {
+  @apply bg-customLBeige text-sm text-black font-open py-2 px-7 rounded shadow-xl hover:shadow-2xl;
+}
+
+.btn-secondary {
+  @apply bg-customDark text-white font-open py-2 px-4 rounded;
+}
+
