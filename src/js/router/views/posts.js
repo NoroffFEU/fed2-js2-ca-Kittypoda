@@ -10,6 +10,8 @@ export function generatePost(post){
   const postContainer = document.createElement('div');
   postContainer.classList.add('post-container');
 
+  postContainer.classList.add('py-4')
+
   const postPageLink = document.createElement('a');
   postPageLink.href = '#';   
 
@@ -30,14 +32,42 @@ export function generatePost(post){
   const heading = document.createElement('p');
   heading.textContent = post.body;
 
+  heading.classList.add('mb-3')
+
   
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
   editButton.href = `/fed2-js2-ca-Kittypoda//post/edit/?postId=${post.id}`; 
 
+  editButton.classList.add(
+    'bg-customLBeige',
+    'text-sm',
+    'text-customDark',
+    'font-open',
+    'mr-2',
+    'py-1', 
+    'px-5', 
+    'rounded-md', 
+    'shadow-xl',
+    'hover:text-black',
+    );
+
   
   const deleteButton = document.createElement('a');
   deleteButton.textContent = 'Delete';
+  
+  deleteButton.classList.add(
+    'bg-customLBeige',
+     'text-sm',
+     'text-customDark',
+     'font-open',
+     'py-1', 
+     'px-4', 
+     'rounded-md', 
+     'shadow-xl',
+     'hover:text-black',
+     );
+
   deleteButton.addEventListener('click', async (event) => {
     event.preventDefault();
     const postId = post.id;
