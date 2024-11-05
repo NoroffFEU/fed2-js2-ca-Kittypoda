@@ -16,7 +16,9 @@ export default {
         customBeige: '#ECE3DC',
         customLBeige: '#EFE9E4',
         customDark: '#424343',
-        customPink: '#A08686'
+        gradientBeige: '#FDD6BC',
+        gradientBlue: '#DCE9F5',
+
       }
     },
   },
