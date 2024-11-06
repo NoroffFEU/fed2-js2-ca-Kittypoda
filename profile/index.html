@@ -7,11 +7,19 @@
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Profile</h1>
-
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+  <body class="bg-customBeige m-4">
+    <header class="flex items-center justify-between my-4">
+      <div class="font-modak text-customDark text-5xl hover:text-black">Say</div>
+      <button id="logout-button" class="btn-secondary">Logout</button>
+    </header>
+    <main>
+      <div class="flex flex-col justify-start gap-2 w-full max-w-lg mx-auto">
+      <span class="w-12 h-12 bg-gray-300 text-white flex items-center justify-center rounded-full mb-2"></span>
+      <h2 class="mb-2">Oda Rolstad</h2>
+      <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+      <button class="btn-primary max-w-xs">Edit profile</button>
+      <h1 class="mt-16">My posts</h1>
+    </div>
+    </main>
   </body>
 </html>
