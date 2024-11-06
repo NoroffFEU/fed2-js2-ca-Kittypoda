@@ -18,7 +18,6 @@ export default {
         customDark: '#424343',
         gradientBeige: '#FDD6BC',
         gradientBlue: '#DCE9F5',
-
       }
     },
   },
