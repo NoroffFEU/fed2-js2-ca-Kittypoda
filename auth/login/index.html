@@ -2,25 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-
-  <body class="bg-gradient-to-b from-gradientBlue to-gradientBeige min-h-screen">
-    <div class="flex flex-col items-center">
-      <h1>Welcome back!</h1>
-      <a class="text-customDark font-open" href="../register/">New user? Register <span class="underline">here</span></a>
-    </div>
-     <form class="flex flex-col items-center" name="login">
-      <div>
-        <input class="w-full bg-customLBeige text-sm text-black font-open py-3 px-4 mb-2 rounded-md shadow-xl focus:bg-white focus:outline-none" id="email" type="email" name="email" required />
-    </div>
-      <div>
-        <input class="w-full bg-customLBeige text-sm text-black font-open py-3 px-4 mb-2 rounded-md shadow-xl focus:bg-white focus:outline-none" type="password" name="password" id="password" required />
+  <body class="bg-gradient-to-b from-gradientBlue to-gradientBeige min-h-screen m-4">
+    <header class="flex items-center justify-between my-4">
+      <div class="font-modak text-customDark text-5xl hover:text-black">Say</div>
+      <button id="logout-button" class="btn-secondary">Logout</button>
+    </header>
+    <div class="flex items-center justify-center mt-16">
+      <div class="flex flex-col items-center">
+        <h1 class="m-2">Welcome back!</h1>
+        <a class="text-customDark font-open mb-4" href="../register/">New user? Register <span class="underline">here</span></a>
+        <form class="flex flex-col items-center mt-4" name="login">
+          <div>
+            <input class="w-full bg-customLBeige text-sm text-black font-open py-3 px-4 mb-2 rounded-md shadow-xl focus:bg-white focus:outline-none" id="email" type="email" name="email" placeholder="Email" required />
+          </div>
+          <div>
+            <input class="w-full bg-customLBeige text-sm text-black font-open py-3 px-4 mb-2 rounded-md shadow-xl focus:bg-white focus:outline-none" type="password" name="password" id="password" placeholder="password" required />
+          </div>
+          <button class="btn-secondary mt-4">Login</button>
+        </form>
       </div>
-      <button class="btn-secondary">Login</button>
-    </form>
+    </div>
+    
   </body>
 </html>
