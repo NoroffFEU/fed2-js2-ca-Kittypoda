@@ -20,7 +20,7 @@ p {
 }
 
 .btn-primary {
-  @apply bg-customLBeige text-sm text-customDark font-open py-2 px-9 rounded-md shadow-xl hover:text-black;
+  @apply bg-customLBeige text-sm text-customDark font-open py-2 px-9 rounded-md shadow-xl border border-white hover:bg-gradientBlue;
 }
 
 .btn-secondary {

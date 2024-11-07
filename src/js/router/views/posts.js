@@ -44,12 +44,14 @@ export function generatePost(post){
     'text-sm',
     'text-customDark',
     'font-open',
+    'border',
+     'border-white',
     'mr-2',
     'py-1', 
     'px-5', 
     'rounded-md', 
     'shadow-xl',
-    'hover:text-black',
+    'hover:bg-gradientBlue',
     );
 
   
@@ -60,12 +62,14 @@ export function generatePost(post){
     'bg-customLBeige',
      'text-sm',
      'text-customDark',
+     'border',
+     'border-white',
      'font-open',
      'py-1', 
      'px-4', 
      'rounded-md', 
      'shadow-xl',
-     'hover:text-black',
+     'hover:bg-gradientBlue',
      );
 
   deleteButton.addEventListener('click', async (event) => {
