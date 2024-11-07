@@ -7,6 +7,7 @@ export default async function router(pathname = window.location.pathname) {
       await import("./views/home.js");
       await import("./views/posts.js");
       await import("./views/postCreate.js");
+      await import("../ui/auth/logout.js");
       break;
     case "/fed2-js2-ca-Kittypoda/auth/":
       await import("./views/auth.js");
@@ -28,6 +29,7 @@ export default async function router(pathname = window.location.pathname) {
       break;
     case "/fed2-js2-ca-Kittypoda/profile/":
       await import("./views/profile.js");
+      await import("../ui/auth/logout.js");
       break;
    // case "/fed2-js2-ca-Kittypoda/":
    //   await import("./views/posts.js");
