@@ -1,4 +1,5 @@
 import { API_SOCIAL_POSTS } from "../../api/constants";
+console.log(API_SOCIAL_POSTS)
 import { readPosts } from "../../api/post/read";
 import { onDeletePost } from "../../ui/post/delete";
 console.log('readPosts')
@@ -22,10 +23,9 @@ export function generatePost(post){
     window.location.assign(newLink);  
   });
 
-  // Use the actual post author's name or default to "Anonymous"
   const authorName = post.author ? post.author.name : 'Oda';
+  console.log(post)
 
-  // Create a user text element with "authorName says"
   const userText = document.createElement('h2');
   userText.textContent = `${authorName} says..`;
 
