@@ -1,1 +1,29 @@
+/* input.css */
 @import url(_reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-3xl font-noto font-bold text-customDark;
+}
+
+h2 {
+  @apply text-base font-noto font-bold text-customDark;
+}
+
+p {
+  @apply text-sm font-open text-black;
+}
+
+.btn-primary {
+  @apply bg-customLBeige text-sm text-customDark font-open py-2 px-9 rounded-md shadow-xl border border-white hover:bg-gradientBlue;
+}
+
+.btn-secondary {
+  @apply bg-customDark text-sm text-white font-open py-2 px-5 rounded-md hover:bg-black;
+}
+
