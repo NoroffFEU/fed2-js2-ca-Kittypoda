@@ -1,4 +1,5 @@
 import { API_SOCIAL_POSTS } from "../../api/constants";
+console.log(API_SOCIAL_POSTS)
 import { readPosts } from "../../api/post/read";
 import { onDeletePost } from "../../ui/post/delete";
 console.log('readPosts')
@@ -10,11 +11,11 @@ export function generatePost(post){
   const postContainer = document.createElement('div');
   postContainer.classList.add('post-container');
 
-  const postPageLink = document.createElement('a');
-  postPageLink.href = '#';  
-  postPageLink.textContent = 'Read more';  
+  postContainer.classList.add('py-4')
 
-  
+  const postPageLink = document.createElement('a');
+  postPageLink.href = '#';   
+
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();  
     const postId = post.id;
@@ -22,17 +23,55 @@ export function generatePost(post){
     window.location.assign(newLink);  
   });
 
-  const heading = document.createElement('h1');
-  heading.textContent = post.title;
+  const authorName = post.author ? post.author.name : 'Oda';
+  console.log(post)
+
+  const userText = document.createElement('h2');
+  userText.textContent = `${authorName} says..`;
+
+  const heading = document.createElement('p');
+  heading.textContent = post.body;
+
+  heading.classList.add('mb-3')
 
   
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
-  editButton.href = `/fed2-js2-ca-Kittypoda/post/edit/?postId=${post.id}`; 
+  editButton.href = `/fed2-js2-ca-Kittypoda//post/edit/?postId=${post.id}`; 
+
+  editButton.classList.add(
+    'bg-customLBeige',
+    'text-sm',
+    'text-customDark',
+    'font-open',
+    'border',
+     'border-white',
+    'mr-2',
+    'py-1', 
+    'px-5', 
+    'rounded-md', 
+    'shadow-xl',
+    'hover:bg-gradientBlue',
+    );
 
   
   const deleteButton = document.createElement('a');
   deleteButton.textContent = 'Delete';
+  
+  deleteButton.classList.add(
+    'bg-customLBeige',
+     'text-sm',
+     'text-customDark',
+     'border',
+     'border-white',
+     'font-open',
+     'py-1', 
+     'px-4', 
+     'rounded-md', 
+     'shadow-xl',
+     'hover:bg-gradientBlue',
+     );
+
   deleteButton.addEventListener('click', async (event) => {
     event.preventDefault();
     const postId = post.id;
@@ -42,7 +81,7 @@ export function generatePost(post){
     }
   });
 
-  
+  postContainer.appendChild(userText)
   postContainer.appendChild(heading);
   postContainer.appendChild(postPageLink);
   postContainer.appendChild(editButton);
